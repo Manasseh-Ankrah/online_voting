@@ -4,9 +4,9 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+// import FormLabel from '@material-ui/core/FormLabel';
 import IconLabelButtons from '../Login_Page/Button';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import {Paper} from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import firebase from 'firebase';
@@ -23,29 +23,24 @@ import {db} from '../config';
 
 
 
-    // console.log(president);
-    // console.log(vicePresident);
-    // console.log(secretary);
-    // console.log(src);
-
     const handleSubmit = () => {
       console.log("working")
-      if(president && vicePresident && src && secretary ){
-        setPresident("")
-        setVicePresident("")
-        setSecretary("")
-        setSRC("");
+      // if(president && vicePresident && src && secretary ){
+      //   setPresident("")
+      //   setVicePresident("")
+      //   setSecretary("")
+      //   setSRC("");
 
-        db.collection('online-voting').add({
-           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-           president: president,
-           vicePresident: vicePresident,
-           secretary: secretary,
-           src: src,
-      })
-      } else {
-        return;
-      }
+      //   db.collection('online-voting').add({
+      //      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      //      president: president,
+      //      vicePresident: vicePresident,
+      //      secretary: secretary,
+      //      src: src,
+      // })
+      // } else {
+      //   return;
+      // }
     }
 
 
