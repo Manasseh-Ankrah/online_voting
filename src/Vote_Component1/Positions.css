@@ -1,0 +1,164 @@
+.comp {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    /* background-color: rgb(162, 225, 233); */
+    /* background-image: linear-gradient(-225deg, #FF057C 0%, #7C64D5 48%, #4CC3FF 100%); */
+    background-image: linear-gradient(-225deg, #D4FFEC 0%, #57F2CC 48%, #4596FB 100%);
+}
+
+.president {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* background-image: linear-gradient(-225deg, #D4FFEC 0%, #f2ce57 48%, #4596FB 100%); */
+    padding: 15px;
+}
+
+.president__candidates {
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    margin-top: 15px !important;
+    border-radius: 2px;
+    /* margin-top: 250px !important; */
+}
+
+.president__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    margin-top: 10px;
+}
+
+hr {
+    height: 5px;
+    width: 90vw;
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.vote {
+    display: flex !important;
+    align-items: center;
+    justify-content: center !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
+
+/*SECRETARY  */
+
+.secretary {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* background-image: linear-gradient(-225deg, #D4FFEC 0%, #f2ce57 48%, #4596FB 100%); */
+    padding: 15px;
+}
+
+.secretary__candidates {
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    margin-top: 15px !important;
+    border-radius: 2px;
+    /* margin-top: 250px !important; */
+}
+
+.secretary__title {
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    margin-top: 10px;
+}
+
+
+
+/* VICE-PRSIDENT */
+
+.vicepresident {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* background-image: linear-gradient(-225deg, #D4FFEC 0%, #f2ce57 48%, #4596FB 100%); */
+    padding: 15px;
+}
+
+.vicepresident__candidates {
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    margin-top: 15px !important;
+    /* background-color: rgb(130, 238, 175); */
+    border-radius: 2px;
+    /* margin-top: 250px !important; */
+}
+
+.vicepresident__title {
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    margin-top: 10px;
+}
+
+
+
+/* SRC-PRESIDENT */
+
+.src {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* background-image: linear-gradient(-225deg, #D4FFEC 0%, #f2ce57 48%, #4596FB 100%); */
+    padding: 15px;
+}
+
+.src__candidates {
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    margin-top: 15px !important;
+    /* background-color: rgb(130, 238, 175); */
+    border-radius: 2px;
+    /* margin-top: 250px !important; */
+}
+
+.src__title {
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    margin-top: 10px;
+}
+
+
+
+
+

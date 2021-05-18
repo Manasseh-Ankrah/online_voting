@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, #43e97b 0%, #64df6a 100%);    /* background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'; */
+    height: 60px;
+    padding: 15px;
+    position: sticky;
+    z-index: 100;
+}
+
+.header__left {
+    color: #fff !important;
+    font-size: 32px !important;
+}
+
+.header__right {
+    color: #fff !important;
+    font-size: 32px !important;
+}
+

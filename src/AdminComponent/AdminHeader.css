@@ -1,0 +1,32 @@
+.adminheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(59, 230, 88);
+    /* height: 80px;
+    padding: 0px;
+    position: sticky;
+    z-index: 100; */
+}
+
+.adminheader__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    margin-top: 10px;
+    color: #fff;
+    margin-right: 60px;
+}
+
+
+.adminheader__icon {
+    color: #fff !important;
+    font-size: 32px !important;
+}
+
