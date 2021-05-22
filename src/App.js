@@ -3,7 +3,7 @@ import Login from './Login_Page/Login';
 import Main_Vote from './Vote_Component1/Main_Vote';
 import AdminLogin from './AdminComponent/AdminLogin';
 import AdminPage from './AdminComponent/AdminPage';
-import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+import {BrowserRouter as Router,Switch,Route, Redirect} from 'react-router-dom';
 
 
 function App() {
@@ -27,10 +27,9 @@ function App() {
           <Route path="/admin_page">
              <AdminPage /> 
           </Route> 
+          {/* <Redirect to="/" /> */}
         </Switch>
       </Router>
-
-
   );
 }
 

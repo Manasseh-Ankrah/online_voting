@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 function Admin_Form() {
     const classes = useStyles();
 
-    const [studentId,setStudentId] = useState("");
+    const [adminPass,setAdminPass] = useState("");
     const Password = "admin123";
     return (
         <div>
@@ -26,22 +26,22 @@ function Admin_Form() {
           <TextField
             type= "password"
             label="Enter Password"
-            value={studentId}
-            onChange={(e)=> setStudentId(e.target.value)}
+            value={adminPass}
+            onChange={(e)=> setAdminPass(e.target.value)}
             variant="outlined"
             size="small"
           />
-          {/* {studentId === Password 
-           ?   */}
-            <div className="entryform__btn">
+          {adminPass === Password 
+           ?  
+            <div className="entryform__btn" onClick={()=> setAdminPass("")}>
            <Link to="/admin_page" style={{textDecoration: "none"}}> 
-             <IconLabelButtons title="Login" /> 
+             <IconLabelButtons title="Login"/> 
            </Link>
          </div>
-
-          {/* : <div className="entryform__btn">
-            <IconLabelButtons title="Login" /> 
-        </div> } */}
+            : <div className="entryform__btn">
+              <IconLabelButtons title="Login" /> 
+         </div> 
+         } 
         
         </div>
       </form>

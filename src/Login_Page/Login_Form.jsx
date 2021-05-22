@@ -1,5 +1,6 @@
 import React,{useState,useContext} from 'react';
 import "./Login_Form.css";
+import Button from '@material-ui/core/Button';
 import IconLabelButtons from "./Button";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -20,7 +21,6 @@ export default function TextFieldSizes() {
   const [studentId,setStudentId] = useState("");
   const Password = "admin";
 
-
   
     return (
       <form className={classes.root} noValidate autoComplete="off">
@@ -34,15 +34,20 @@ export default function TextFieldSizes() {
             size="small"
           />
           
-          {studentId === Password 
-           ?   <div className="entryform__btn">
-           <Link to="/main_vote" style={{textDecoration: "none"}}>
-             <IconLabelButtons title="Login" /> 
+             <div className="entryform__btn">
+           <Link  to= {studentId === Password ? "/main_vote" :"/"} style={{textDecoration: "none"}}>
+               <div>
+                   <Button
+                      variant="contained"
+                      color="primary"
+                      size="large"
+                   >
+                     Login
+                  </Button>
+               </div>
            </Link>
          </div>
-          : <div className="entryform__btn">
-            <IconLabelButtons title="Login" /> 
-        </div> }
+          
         
         </div>
       </form>
