@@ -11,9 +11,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: rgb(236, 240, 235); */
-  background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);}
-
+  background-color: rgb(240, 238, 235);
+  /* background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%); */
+}
+it
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
