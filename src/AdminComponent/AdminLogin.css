@@ -1,14 +1,58 @@
-
-
-.adminlogin__form {
+.adminlogin{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.paper {
-    width: 550px;
-    height: 300px;
+.adminlogin_paper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 500px;
+    height: 270px;
     margin-top: 30px;
+}
+
+.adminlogin__title__div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+
+.adminlogin__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    /* margin-top: 10px; */
+    /* margin-right: 60px; */
+    /* margin-bottom: 10px; */
+    color: #fff;
+}
+
+.adminlogin__underline {
+    height: 3px;
+    width: 30vw;
+    background-color: rgb(226, 218, 218);
+    margin-top: 10px;
+    margin-bottom: 0px;
+    border: none;
+}
+
+.adminlogin__text {
+    font-size: medium;
+    font-weight: 500;
+    color: #fff ;
 }

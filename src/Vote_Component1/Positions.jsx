@@ -24,23 +24,24 @@ import {db} from '../config';
 
 
     const handleSubmit = () => {
+      
       console.log("working")
-      // if(president && vicePresident && src && secretary ){
-      //   setPresident("")
-      //   setVicePresident("")
-      //   setSecretary("")
-      //   setSRC("");
+      if(president && vicePresident && src && secretary ){
+        setPresident("")
+        setVicePresident("")
+        setSecretary("")
+        setSRC("");
 
-      //   db.collection('online-voting').add({
-      //      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      //      president: president,
-      //      vicePresident: vicePresident,
-      //      secretary: secretary,
-      //      src: src,
-      // })
-      // } else {
-      //   return;
-      // }
+        db.collection('online-voting').add({
+           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+           president: president,
+           vicePresident: vicePresident,
+           secretary: secretary,
+           src: src,
+      })
+      } else {
+        return;
+      }
     }
 
 

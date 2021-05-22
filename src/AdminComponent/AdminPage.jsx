@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
+import  Results from '../Vote_Results/Results';
 
 function AdminPage() {
     return (
         <div>
-            <h3>Welcome ADMIN!!</h3>
-            
+            <Results />            
         </div>
     )
 }

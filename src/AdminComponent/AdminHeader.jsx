@@ -15,10 +15,6 @@ function AdminHeader() {
                   </Link>
                </IconButton>
             </div>
-          <div>
-              <h3  className="adminheader__title">Welcome ADMIN, Enter Password to see votes</h3>
-          </div>
-      
         </div>
     )
 }

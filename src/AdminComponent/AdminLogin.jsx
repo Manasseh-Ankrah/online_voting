@@ -17,15 +17,19 @@ export default function AdminLogin() {
 </Paper> */}
   
     return (
-
-<Paper className="adminlogin">
-      <AdminHeader />
-        <div className="adminlogin__form">
+ <div className="adminlogin">
+       <AdminHeader /> 
+         <div className="adminlogin__title__div">
+              <h3 className="adminlogin__title">Welcome ADMIN</h3> 
+              <p  className="adminlogin__text">Enter password to see votes</p>
+              <hr className="adminlogin__underline"/>
+          </div>
+     <Paper className="adminlogin_paper">
             <div className="login__textfield">
                 <Admin_Form />
             </div>       
-        </div>
         </Paper>
+        </div>
     );
 
   
