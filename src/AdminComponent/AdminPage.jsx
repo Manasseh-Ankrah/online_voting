@@ -1,10 +1,10 @@
 import React from 'react';
-import  Results from '../Vote_Results/Results';
+import  Main_Results from '../Vote_Results/Main_Results';
 
 function AdminPage() {
     return (
         <div>
-            <Results />            
+            <Main_Results />
         </div>
     )
 }

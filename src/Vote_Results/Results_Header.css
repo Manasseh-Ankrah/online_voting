@@ -1,0 +1,17 @@
+.results_header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(59, 230, 88);
+    width: 100%;
+    /* margin-left: 25px; */
+}
+
+
+.results_header__icon {
+    /* margin-left: 25px; */
+    color: #fff !important;
+    font-size: 25px !important;
+}
+

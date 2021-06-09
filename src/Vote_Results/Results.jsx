@@ -317,7 +317,7 @@ export default function Results() {
           student_Name: info.data().student_Name,
         }))
       );
-      setLoading(true);
+      setLoading(false);
     })
        
 

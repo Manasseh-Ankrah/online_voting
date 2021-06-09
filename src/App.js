@@ -3,6 +3,7 @@ import Login from "./Login_Page/Login";
 import Main_Vote from "./Vote_Component1/Main_Vote";
 import AdminLogin from "./AdminComponent/AdminLogin";
 import AdminPage from "./AdminComponent/AdminPage";
+// import AdminLogin from "./AdminComponent/AdminLogin";
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,6 +24,10 @@ function App() {
 
         <Route path="/main_vote">
           <Main_Vote />
+        </Route>
+
+        <Route path="/main_results">
+          <AdminLogin />
         </Route>
 
         <Route path="/admin_login">
