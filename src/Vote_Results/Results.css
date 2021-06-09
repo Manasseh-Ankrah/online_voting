@@ -1,6 +1,18 @@
-.result__table {
-    flex: 0.7;
-    margin-top: 30px;
-    margin-left: 50px;
-    margin-right: 40px;
+.results__table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 10%;
 }
+
+.results__content {
+    width: 50%;
+}
+
+.results__paper {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+

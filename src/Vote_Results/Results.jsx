@@ -1,5 +1,5 @@
 import React,{useState,useContext} from 'react';
-// import "./Currentvoteget.css";
+import Loader from 'react-loader-spinner';
 // import IconLabelButtons from "./Button";
 import {db} from "../config";
 import shortid from 'shortid';
@@ -201,14 +201,21 @@ EnhancedTableToolbar.propTypes = {
 // STYLING
 const useStyles = makeStyles((theme) => ({
   root: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
     width: '100%',
+    marginTop: theme.spacing(5),
+    marginBottom: theme.spacing(5),
+
   },
   paper: {
-    width: '100%',
-    marginBottom: theme.spacing(2),
+    width: '90%',
+    marginBottom: theme.spacing(1),
   },
   table: {
-    minWidth: 750,
+    minWidth: 650,
   },
   visuallyHidden: {
     border: 0,
@@ -219,7 +226,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
     position: 'absolute',
     top: 20,
-    width: 1,
+    width: 50,
   },
 }));
 
@@ -291,21 +298,13 @@ export default function Results() {
 
   const isSelected = (name) => selected.indexOf(name) !== -1;
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+  
 
-    // const {product,cost,percent,budgetInfo} = useContext(AppContext);
-    const [studentId,setStudentId] = useState(1234);
-    const [president,setPresident] = useState("");
-    const [vicePresident,setVicePresident] = useState("");
-    const [srcPresident,setSrcPresident] = useState("");
-    const [secretary,setSecretary] = useState("");
     const [voterslist,setVotersList] = useState([]);
     const [loading,setLoading] = useState(true);
 
  
-
-
     db.collection('online-voting').onSnapshot((query)=> {
-      setLoading(false);
       setVotersList(
         query.docs.map( info => ({
           id: info.id,
@@ -313,22 +312,27 @@ export default function Results() {
           president: info.data().president,
           vicePresident: info.data().vicePresident,
           srcPresident: info.data().src,
-          secretary: info.data().secretary
+          secretary: info.data().secretary,
+          student_Id: info.data().student_Id,
+          student_Name: info.data().student_Name,
         }))
-      )
+      );
+      setLoading(true);
     })
        
 
         
-   const Loader = () => {
-      <div className="div">
-        <h3>loading</h3>
-      </div>
+   const Spinner = () => {
+     return(
+    <div style={{display: "flex", justifyContent: "center",alignItems:"center",marginTop: 300}} >
+      <Loader type="TailSpin" color="white" height={80} width={80} />
+    </div>
+     )
     }
   
 return(
-  <div>
-      { loading ? <h2>Loading...</h2> :
+  <div className="results__table">
+      { loading ? <Spinner /> :
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <EnhancedTableToolbar numSelected={selected.length} />
@@ -368,7 +372,7 @@ return(
                         />
                       </TableCell>
                       <TableCell component="th" id="" scope="row" padding="none">
-                        { vote.studentId } 
+                        { vote.student_Name +"("+ vote.student_Id +")" } 
                       </TableCell>
                       <TableCell align="right">
                         { vote.president } 

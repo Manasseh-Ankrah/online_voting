@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import IconLabelButtons from "../Login_Page/Button";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import {Link} from 'react-router-dom';
+import {db} from "../config";
+
 const useStyles = makeStyles((theme) => ({
     root: {
       '& .MuiTextField-root': {
@@ -13,12 +15,36 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-
 function Admin_Form() {
     const classes = useStyles();
-
     const [adminPass,setAdminPass] = useState("");
-    const Password = "admin123";
+    const [admin,setAdmin] = useState([{"password" : ""}]);
+
+
+    useEffect(()=> {
+      callResponse();
+    },[]);
+
+
+    
+  const callResponse = () => {
+    try {
+      db.collection('admin-password').onSnapshot((query)=> {
+        setAdmin(
+          query.docs.map( info => ({
+            // id: info.id,
+            password: info.data().password,
+          }))
+        );
+      })
+    } catch (error) {
+    console.log("error occured")
+  }
+}
+  
+  // console.log(currentStudent[0].indexNum);
+  console.log(admin);
+
     return (
         <div>
             <form className={classes.root}  noValidate autoComplete="off">
@@ -31,7 +57,7 @@ function Admin_Form() {
             variant="outlined"
             size="small"
           />
-          {adminPass === Password 
+          { parseInt(adminPass) === admin[0].password 
            ?  
             <div className="entryform__btn" onClick={()=> setAdminPass("")}>
            <Link to="/admin_page" style={{textDecoration: "none"}}> 
