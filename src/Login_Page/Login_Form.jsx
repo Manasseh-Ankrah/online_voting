@@ -27,6 +27,8 @@ export default function TextFieldSizes() {
   const {IndexNumber,BioData} = useContext(AppContext);
   const [contextIndex,setContextIndex] = IndexNumber;
   const [contextBio,setContextBio] = BioData;
+  const [voted,setVoted] = useState(true);
+
   const [currentStudent,setCurrentStudent] = useState(
     [
       {"id" : 9},
@@ -51,6 +53,7 @@ useEffect(()=> {
               id: info.id,
               indexNum: info.data().indexNum,
               name: info.data().name,
+              isVoted: info.data.isVoted
             }))
           );
         })
@@ -64,6 +67,8 @@ useEffect(()=> {
     const newIndex = (ITEM) => {
       let results;
     console.log(ITEM);
+    console.log(ITEM[0].isVoted);
+
 
     //For fetching index numbers from the Database
     results = ITEM.filter((num,studName)=> num.indexNum === parseInt(studentId)); 
@@ -73,6 +78,11 @@ useEffect(()=> {
     //For fetching student name from the Database
     const Name = results.map(studName => studName.name );
     setContextBio(Name[0])
+
+    // const voteStatus = results.map(votes => votes.isVoted);
+    // console.log(voteStatus)
+    // setVoted(false)
+
     
 
     
