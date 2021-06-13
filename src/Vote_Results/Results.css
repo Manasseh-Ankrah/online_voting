@@ -6,6 +6,11 @@
     width: 10%;
 }
 
+.tbody {
+    overflow-y: auto;
+    overflow-x: scroll;
+}
+
 .results__content {
     width: 50%;
 }
@@ -13,6 +18,15 @@
 .results__paper {
     width: 50%;
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 780px) {
+    .results__paper {
+        width: 10%;
+        margin-bottom: 20px;
+        color: black;
+    }
+
 }
 
 

@@ -1,4 +1,4 @@
-import React,{useState,useEffect, useContext} from 'react';
+import React, {useState,useEffect, useContext} from 'react';
 import "./Login_Form.css";
 import Button from '@material-ui/core/Button';
 import {db} from "../config";
@@ -24,19 +24,19 @@ const useStyles = makeStyles((theme) => ({
 export default function TextFieldSizes() {
   const classes = useStyles();
   const [studentId,setStudentId] = useState("");
-  const {IndexNumber,BioData} = useContext(AppContext);
+  const {IndexNumber,BioData,StudentObject,IdVal,Alert} = useContext(AppContext);
   const [contextIndex,setContextIndex] = IndexNumber;
   const [contextBio,setContextBio] = BioData;
   const [voted,setVoted] = useState(true);
+  const [route, setRoute] = useState("")
 
-  const [currentStudent,setCurrentStudent] = useState(
-    [
-      {"id" : 9},
-      {"indexNum" : 13}
-    ]
-    );
+  const [contextStudent,setContextStudent] = StudentObject; 
+  const [contextId,setContextId] = IdVal; 
+  const [contextModal,setContextModal] = Alert;
 
-    console.log(contextIndex)
+
+
+ 
 
   
 useEffect(()=> {
@@ -44,16 +44,18 @@ useEffect(()=> {
 },[]);
 
 
+// console.log(contextStudent[0].Voted)
 
   const loadResponse = () => {
+
       try {
         db.collection('index-numbers').onSnapshot((query)=> {
-          setCurrentStudent(
+          setContextStudent(
             query.docs.map( info => ({
               id: info.id,
               indexNum: info.data().indexNum,
               name: info.data().name,
-              isVoted: info.data.isVoted
+              Voted: info.data().voted
             }))
           );
         })
@@ -63,38 +65,73 @@ useEffect(()=> {
   }
 
 
-  
+
     const newIndex = (ITEM) => {
       let results;
     console.log(ITEM);
-    console.log(ITEM[0].isVoted);
+    // console.log(ITEM[0].isVoted);
 
 
     //For fetching index numbers from the Database
     results = ITEM.filter((num,studName)=> num.indexNum === parseInt(studentId)); 
     const Data = results.map(index => index.indexNum );
+    // setRoute( Data[0]);
     setContextIndex(Data[0]);
 
     //For fetching student name from the Database
     const Name = results.map(studName => studName.name );
     setContextBio(Name[0])
 
-    // const voteStatus = results.map(votes => votes.isVoted);
-    // console.log(voteStatus)
-    // setVoted(false)
+    const voteStatus = results.map(votes => votes.Voted);
+    console.log(voteStatus[0])
 
-    
+    const Id = results.map(ids => ids.id);
+    setContextId(Id[0])
+    console.log(contextId)
 
-    
+    setStudentId("");
 
-    return Data[0]; 
+    if(voteStatus[0] === true) {
+      return alert("You have already voted");
+
+    } else {
+      return Data[0]; 
+    }
+
   }
 
-  // const finalIndex = newIndex(currentStudent);
-  // setSendId( newIndex(currentStudent));
-  // console.log(sendId);
+  // console.log(route);
 
 
+  const Route = (ITEM) => {
+    let results;
+  console.log(ITEM);
+  // console.log(ITEM[0].isVoted);
+
+
+  //For fetching index numbers from the Database
+  results = ITEM.filter((num,studName)=> num.indexNum === parseInt(studentId)); 
+  const Data = results.map(index => index.indexNum );
+  setContextIndex(Data[0]);
+
+  //For fetching student name from the Database
+  const Name = results.map(studName => studName.name );
+  setContextBio(Name[0])
+
+  const voteStatus = results.map(votes => votes.Voted);
+  console.log(voteStatus[0])
+
+  const Id = results.map(ids => ids.id);
+  setContextId(Id[0])
+  console.log(contextId)
+
+  if(voteStatus[0] === true) {
+    return;
+
+  } else {
+    return Data[0]; 
+  }
+}
 
 
   
@@ -112,13 +149,13 @@ useEffect(()=> {
           />
           
              <div className="entryform__btn">
-           <Link  to= {parseInt(studentId)  === newIndex(currentStudent) ? "/main_vote" :"/"} style={{textDecoration: "none"}}>
+           <Link  to= {parseInt(studentId)  === Route(contextStudent) ? "/main_vote" :"/"} style={{textDecoration: "none"}}>
                <div>
                    <Button
                       variant="contained"
                       color="primary"
                       size="large"
-                      onClick={()=> parseInt(newIndex(currentStudent))}
+                      onClick={()=> parseInt(newIndex(contextStudent))}
                    >
                      Login
                   </Button>

@@ -7,9 +7,10 @@ import FormControl from "@material-ui/core/FormControl";
 // import FormLabel from '@material-ui/core/FormLabel';
 import IconLabelButtons from "../Login_Page/Button";
 // import PropTypes from 'prop-types';
+import SaveIcon from '@material-ui/icons/Save';
 import { Paper } from "@material-ui/core";
 import {Link} from 'react-router-dom';
-// import Button from "@material-ui/core/Button";
+import Button from '@material-ui/core/Button';
 import firebase from "firebase";
 import { db } from "../config";
 import { AppContext } from '../ContextApi/Context';
@@ -22,9 +23,12 @@ function President() {
   const [src, setSRC] = useState("");
   const [verified, setVerified] = useState(false);
   const [isVoted, setIsVoted] = useState(true);
-  const {IndexNumber,BioData} = useContext(AppContext);
+  const {IndexNumber,BioData,StudentObject,IdVal} = useContext(AppContext);
   const [contextIndex,setContextIndex] = IndexNumber;
   const [contextBio,setContextBio] = BioData;
+  const [contextStudentObj,setContextStudentObj] = StudentObject; 
+  const [contextId,setContextId] = IdVal; 
+
 
 
 
@@ -33,8 +37,13 @@ function President() {
   console.log(contextIndex,contextBio )
 
   
+  const toggleVerified = () => {
+    console.log("toggled");
+          setVerified(true);
+  };
+
   const handleSubmit = () => {
-    console.log("working");
+    console.log("voted");
     if (president && vicePresident && src && secretary) {
 
       db.collection("online-voting").add({
@@ -47,13 +56,15 @@ function President() {
         student_Id: contextIndex,
         student_Name: contextBio
       });
-          setVerified(true);
+
+          db.collection("index-numbers").doc(contextId).set({
+            voted: true
+          },{ merge: true })
 
     } else {
       return;
     }
 
-    // setIsVoted(true);
   };
 
 
@@ -487,12 +498,19 @@ function President() {
 
       {verified ? 
       <Link to="/vote_status" style={{textDecoration: "none"}}>
-      <div className="vote">
-        <IconLabelButtons title="confirm" />
+      <div className="vote" onClick={() => handleSubmit()}>
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        startIcon={<SaveIcon />}
+      >
+        confirm
+      </Button>
       </div>
       </Link>
       :
-        <div className="vote" onClick={() => handleSubmit()}>
+        <div className="vote" onClick={() => toggleVerified()}>
           <IconLabelButtons title="vote" />
         </div>
       }

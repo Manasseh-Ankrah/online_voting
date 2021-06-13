@@ -352,7 +352,7 @@ return(
               onRequestSort={handleRequestSort}
               rowCount={voterslist.length}
             />
-            <TableBody>
+            <TableBody className="tbody">
               
                 {voterslist.map( vote => {
                   return (
