@@ -5,17 +5,7 @@ import Admin_Form from "./Admin_Form";
 import {Paper} from '@material-ui/core';
 
 
-export default function AdminLogin() {
-  {/* <h3  className="adminlogin__title">Welcome ADMIN!! <br/> Enter Password to see votes</h3> 
-
-<Paper className="paper">
-  <div className="login">
-  <div className="login__textfield">
-  <TextFieldSizes />
-  </div>       
-  </div>
-</Paper> */}
-  
+export default function AdminLogin() {  
     return (
  <div className="adminlogin">
        <AdminHeader /> 

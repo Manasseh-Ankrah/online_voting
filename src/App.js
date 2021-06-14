@@ -3,7 +3,6 @@ import Login from "./Login_Page/Login";
 import Main_Vote from "./Vote_Component1/Main_Vote";
 import AdminLogin from "./AdminComponent/AdminLogin";
 import AdminPage from "./AdminComponent/AdminPage";
-// import AdminLogin from "./AdminComponent/AdminLogin";
 import {
   BrowserRouter as Router,
   Switch,
@@ -42,8 +41,7 @@ function App() {
           <AdminPage />
         </Route>
 
-
-        {/* <Redirect to="/" /> */}
+        <Redirect to="/" />
       </Switch>
     </Router>
   );

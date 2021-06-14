@@ -15,11 +15,7 @@ function Context(props) {
         ]
         );
 
-    console.log(studentIndex);
-    console.log(studentBio);
 
-
-   
     return (
         <AppContext.Provider value={{ 
             IndexNumber:[studentIndex,setStudentIndex],

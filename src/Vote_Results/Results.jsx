@@ -1,6 +1,5 @@
-import React,{useState,useContext} from 'react';
+import React,{useState} from 'react';
 import Loader from 'react-loader-spinner';
-// import IconLabelButtons from "./Button";
 import {db} from "../config";
 import shortid from 'shortid';
 import PropTypes from 'prop-types';
@@ -24,14 +23,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
-// import TextFieldSizes from "./Entryform";
-// import {AppContext} from "./Context";
 
-// IMPORTANT
+
 function createData(student_id, president, vice_president, src_president, secretary) {
-  // const {budgetInfo} = useContext(AppContext);
-  // const [newBudgetInfo,setNewBudgetInfo] = budgetInfo;
-
   return { student_id, president, vice_president,src_president,secretary};
 }
 
@@ -79,9 +73,6 @@ const headCells = [
   { id: 'vice_president', numeric: true, disablePadding: false, label: 'Vice President' },
   { id: 'src_president', numeric: true, disablePadding: false, label: 'SRC President' },
   { id: 'secretary', numeric: true, disablePadding: false, label: 'Secretary' },
-
-//   { id: 'carbs', numeric: true, disablePadding: false, label: 'Carbs (g)' },
-//   { id: 'protein', numeric: true, disablePadding: false, label: 'Protein (g)' },
 ];
 
 function EnhancedTableHead(props) {
@@ -232,9 +223,6 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-
-// FUNCTIONNNNNNNNNN
-
 export default function Results() {
   const classes = useStyles();
   const [order, setOrder] = React.useState('asc');
@@ -296,7 +284,7 @@ export default function Results() {
     setDense(event.target.checked);
   };
 
-  const isSelected = (name) => selected.indexOf(name) !== -1;
+  // const isSelected = (name) => selected.indexOf(name) !== -1;
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
   
 
@@ -363,13 +351,9 @@ return(
                       aria-checked=""
                       tabIndex={-1}
                       key={shortid.generate()}
-                      // selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">
-                        <Checkbox
-                          // checked={isItemSelected}
-                          // inputProps={{ 'aria-labelledby': labelId }}
-                        />
+                        <Checkbox />
                       </TableCell>
                       <TableCell component="th" id="" scope="row" padding="none">
                         { vote.student_Name +"("+ vote.student_Id +")" } 
@@ -386,9 +370,6 @@ return(
                       <TableCell align="right">
                           {vote.secretary}
                       </TableCell>
-                      {/* <TableCell align="right">
-                          {row.protein}
-                      </TableCell> */}
                     </TableRow>
                   );
                 })}
@@ -401,7 +382,7 @@ return(
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[5,10,25]}
           component="div"
           count={voterslist.length}
           rowsPerPage={rowsPerPage}

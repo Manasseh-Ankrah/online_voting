@@ -32,7 +32,6 @@ function Admin_Form() {
       db.collection('admin-password').onSnapshot((query)=> {
         setAdmin(
           query.docs.map( info => ({
-            // id: info.id,
             password: info.data().password,
           }))
         );
@@ -42,9 +41,6 @@ function Admin_Form() {
   }
 }
   
-  // console.log(currentStudent[0].indexNum);
-  console.log(admin);
-
     return (
         <div>
             <form className={classes.root}  noValidate autoComplete="off">

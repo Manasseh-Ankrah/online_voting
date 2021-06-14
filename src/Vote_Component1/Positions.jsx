@@ -4,9 +4,7 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-// import FormLabel from '@material-ui/core/FormLabel';
 import IconLabelButtons from "../Login_Page/Button";
-// import PropTypes from 'prop-types';
 import SaveIcon from '@material-ui/icons/Save';
 import { Paper } from "@material-ui/core";
 import {Link} from 'react-router-dom';
@@ -34,16 +32,13 @@ function President() {
 
 
   // console.log(process.env.REACT_APP_API_KEY )
-  console.log(contextIndex,contextBio )
 
   
   const toggleVerified = () => {
-    console.log("toggled");
           setVerified(true);
   };
 
   const handleSubmit = () => {
-    console.log("voted");
     if (president && vicePresident && src && secretary) {
 
       db.collection("online-voting").add({
