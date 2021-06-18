@@ -1,22 +1,12 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect} from 'react';
+import './Admin_Form.css';
 import IconLabelButtons from "../Login_Page/Button";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import {Link} from 'react-router-dom';
 import {db} from "../config";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      '& .MuiTextField-root': {
-        margin: theme.spacing(1.2),
-        width: 350,
-      },
-    },
-  }));
-
-
 function Admin_Form() {
-    const classes = useStyles();
     const [adminPass,setAdminPass] = useState("");
     const [admin,setAdmin] = useState([{"password" : ""}]);
 
@@ -43,9 +33,10 @@ function Admin_Form() {
   
     return (
         <div>
-            <form className={classes.root}  noValidate autoComplete="off">
+            <form noValidate autoComplete="off">
         <div className="admin__textbox">
           <TextField
+            className="admin_form"
             type= "password"
             label="Enter Password"
             value={adminPass}
@@ -55,12 +46,12 @@ function Admin_Form() {
           />
           { parseInt(adminPass) === admin[0].password 
            ?  
-            <div className="entryform__btn" onClick={()=> setAdminPass("")}>
+            <div className="admin_btn" onClick={()=> setAdminPass("")}>
            <Link to="/admin_page" style={{textDecoration: "none"}}> 
              <IconLabelButtons title="Login"/> 
            </Link>
          </div>
-            : <div className="entryform__btn">
+            : <div className="admin_btn">
               <IconLabelButtons title="Login" /> 
          </div> 
          } 

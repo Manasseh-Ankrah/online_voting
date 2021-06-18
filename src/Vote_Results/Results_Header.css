@@ -1,15 +1,22 @@
 .results_header {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    justify-content: space-between !important;
     background-color: rgb(59, 230, 88);
     width: 100%;
+}
+
+.btn {
+    color:#fff !important;
+    background-image: linear-gradient(to right, #2979e2 0%, #0ef0c6 100%) !important;
+    margin-right: 20px !important;
 }
 
 
 .results_header__icon {
     color: #fff !important;
-    font-size: 25px !important;
+    font-size: 32px !important;
 }
 

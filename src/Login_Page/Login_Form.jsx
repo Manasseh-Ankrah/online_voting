@@ -8,19 +8,22 @@ import {Link} from 'react-router-dom';
 import { AppContext } from '../ContextApi/Context';
 
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1.2),
-      width: 350,
-    },
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     '& .MuiTextField-root': {
+//       margin: theme.spacing(1.2),
+//       width: 350,
+//       display: flex,
+//       justifyContent: center,
+//       alignItems: center
+//     },
+//   },
+// }));
 
 
 
 export default function TextFieldSizes() {
-  const classes = useStyles();
+  // const classes = useStyles();
   const [studentId,setStudentId] = useState("");
   const {IndexNumber,BioData,StudentObject,IdVal,Alert} = useContext(AppContext);
   const [contextIndex,setContextIndex] = IndexNumber;
@@ -114,9 +117,10 @@ useEffect(()=> {
   
     return (
       <div>
-      <form className={classes.root} noValidate autoComplete="off">
+      <form noValidate autoComplete="off">
         <div className="entryform">
           <TextField
+            className= "login_form"
             type= "password"
             label="Enter Id"
             value={studentId}

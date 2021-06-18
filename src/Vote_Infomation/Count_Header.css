@@ -1,4 +1,4 @@
-.adminheader {
+.count_header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -8,7 +8,7 @@
 }
 
 
-.adminheader__icon {
+.count_header__icon {
     color: #fff !important;
     font-size: 32px !important;
 }

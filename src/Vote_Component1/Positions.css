@@ -4,17 +4,16 @@
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
-    /* background-color: rgb(162, 225, 233); */
-    /* background-image: linear-gradient(-225deg, #FF057C 0%, #7C64D5 48%, #4CC3FF 100%); */
     background-image: linear-gradient(-225deg, #D4FFEC 0%, #57F2CC 48%, #4596FB 100%);
 }
+
+/* President */
 
 .president {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    /* background-image: linear-gradient(-225deg, #D4FFEC 0%, #f2ce57 48%, #4596FB 100%); */
     padding: 15px;
 }
 
@@ -26,7 +25,6 @@
     flex-wrap: wrap !important;
     margin-top: 15px !important;
     border-radius: 2px;
-    /* margin-top: 250px !important; */
 }
 
 .president__title {
@@ -66,7 +64,6 @@ hr {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    /* background-image: linear-gradient(-225deg, #D4FFEC 0%, #f2ce57 48%, #4596FB 100%); */
     padding: 15px;
 }
 
@@ -78,7 +75,6 @@ hr {
     flex-wrap: wrap !important;
     margin-top: 15px !important;
     border-radius: 2px;
-    /* margin-top: 250px !important; */
 }
 
 .secretary__title {
@@ -110,9 +106,7 @@ hr {
     align-items: center !important;
     flex-wrap: wrap !important;
     margin-top: 15px !important;
-    /* background-color: rgb(130, 238, 175); */
     border-radius: 2px;
-    /* margin-top: 250px !important; */
 }
 
 .vicepresident__title {
@@ -133,7 +127,6 @@ hr {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    /* background-image: linear-gradient(-225deg, #D4FFEC 0%, #f2ce57 48%, #4596FB 100%); */
     padding: 15px;
 }
 
@@ -144,9 +137,7 @@ hr {
     align-items: center !important;
     flex-wrap: wrap !important;
     margin-top: 15px !important;
-    /* background-color: rgb(130, 238, 175); */
     border-radius: 2px;
-    /* margin-top: 250px !important; */
 }
 
 .src__title {
@@ -158,6 +149,44 @@ hr {
     margin-top: 10px;
 }
 
+
+@media screen and (max-width: 500px) {
+    .president__candidates {
+        flex-direction: column !important;
+    }
+
+    .secretary__candidates {
+        flex-direction: column !important;
+    }
+
+    .vicepresident__candidates {
+        flex-direction: column !important;
+    }
+
+    .src__candidates {
+        flex-direction: column !important;
+    }
+    
+    .president {
+        width: 100%;
+    }
+
+    .secretary {
+        width: 100%;
+    }
+
+    .vicepresident {
+        width: 100%;
+    }
+
+    .src {
+        width: 100%;
+    }
+
+    .paper__comp {
+        width: 100% !important;
+    }
+}
 
 
 

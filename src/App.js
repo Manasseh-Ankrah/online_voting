@@ -3,6 +3,7 @@ import Login from "./Login_Page/Login";
 import Main_Vote from "./Vote_Component1/Main_Vote";
 import AdminLogin from "./AdminComponent/AdminLogin";
 import AdminPage from "./AdminComponent/AdminPage";
+import Main_Count from "./Vote_Infomation/Main_Count";
 import {
   BrowserRouter as Router,
   Switch,
@@ -39,6 +40,14 @@ function App() {
 
         <Route path="/admin_page">
           <AdminPage />
+        </Route>
+
+        <Route path="/total_votes">
+          <Main_Count />
+        </Route>
+
+        <Route path="/admin_page">
+        <AdminPage />
         </Route>
 
         <Redirect to="/" />

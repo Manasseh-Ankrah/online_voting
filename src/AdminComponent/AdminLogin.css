@@ -14,6 +14,8 @@
     width: 500px;
     height: 280px;
     margin-top: 30px;
+    margin-bottom: 20px;
+
 }
 
 .adminlogin__title__div {
@@ -55,4 +57,44 @@
     font-size: medium;
     font-weight: 500;
     color: #fff ;
+}
+
+/* .login__textfield {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+} */
+
+@media screen and (max-width: 600px) {
+    .adminlogin_paper {
+        width: 100%;
+        height: 300px;
+        margin-top: 30px;
+    }
+
+    .login__textfield {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .adminlogin_paper {
+        width: 100%;
+        height: 300px;
+        margin-top: 30px;
+    }
+
+    .login__textfield {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
 }

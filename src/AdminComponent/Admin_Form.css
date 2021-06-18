@@ -1,0 +1,26 @@
+.admin_form {
+    display: flex;
+    justify-content: center;
+    width: 350px;
+}
+
+.admin_btn {
+    margin-top: 10px;
+}
+
+
+@media screen and (max-width: 550px) {
+    .admin_form {
+        display: flex;
+        justify-content: center;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .admin_form {
+        display: flex;
+        justify-content: center;
+        width: 250px;
+    }
+}

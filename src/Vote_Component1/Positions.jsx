@@ -65,12 +65,13 @@ function President() {
 
   return (
     <div className="comp">
-      <Paper>
+      <Paper className="paper__comp">
         <div className="president">
           <h3 className="president__title">President</h3>
           <FormControl component="fieldset" className="president__candidates">
             {/* <FormLabel component="legend">President</FormLabel> */}
             <RadioGroup
+              className="align"
               row
               aria-label="position"
               name="position"
@@ -87,6 +88,7 @@ function President() {
             </RadioGroup>
 
             <RadioGroup
+              className="align"
               row
               aria-label="position"
               name="position"
@@ -171,7 +173,7 @@ function President() {
 
       <hr />
 
-      <Paper>
+      <Paper className="paper__comp">
         <div className="vicepresident">
           <h3 className="vicepresident__title">Vice-President</h3>
           <FormControl
@@ -280,7 +282,7 @@ function President() {
 
       <hr />
 
-      <Paper>
+      <Paper className="paper__comp">
         <div className="src">
           <h3 className="src__title">SRC-President</h3>
           <FormControl component="fieldset" className="src__candidates">
@@ -386,7 +388,7 @@ function President() {
 
       <hr />
 
-      <Paper>
+      <Paper className="paper__comp">
         <div className="secretary">
           <h3 className="secretary__title">Secretary</h3>
           <FormControl component="fieldset" className="secretary__candidates">
