@@ -24,7 +24,36 @@
     flex-wrap: wrap;
     margin-top: 20px;
     margin-bottom: 20px;
+}
 
+.Vice_Presidents {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.Src_Presidents {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.Secretary {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .candidate {
@@ -35,8 +64,9 @@
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
+
 
 .title {
     display: flex;
@@ -47,7 +77,19 @@
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.0075em;
-    margin-top: 10px;
+    margin-top: 5px;
+}
+
+.title_vice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    margin-top: 5px; 
 }
 
 .name {
@@ -67,33 +109,68 @@
 }
 
 
-@media screen and (max-width: 980px) {
-    .paper_count {
+@media screen and (max-width: 650px) {    
+    .Presidents {
         display: flex;
         flex-direction: column;
         justify-content: center; 
         align-items: center;
         width: 100%;
-        height: 15%;
+    }
+    .Vice_Presidents {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        width: 100%;
+    }
+    .Src_Presidents {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        width: 100%;
+    }
+    .Secretary {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        width: 100%;
     }
 
+    .candidate {
+        margin-bottom: 20px;
+    }
+
+    .paper_count {
+        width: 100%;
+        height: 50%;
+    }
+
+    .vote_num {
+        margin-bottom: 10px;
+    }
     
-.candidate {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: 400;
-    line-height: 1.4;
-    letter-spacing: 0.0065em;
-    color: rgb(0, 0, 0);
 }
 
 
+@media screen and (max-width: 1220px) {    
+    .candidate {
+        margin-bottom: 10px;
+    }
+
+    .title_vice {
+        margin-top: 30px; 
+    }
+
+    .title {
+        margin-top: 30px; 
+    }
+
+    /* .title {
+        margin-top: 1px;
+    } */
+
 }
+

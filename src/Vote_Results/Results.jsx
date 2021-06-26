@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect, useContext} from 'react';
+import { AppContextVotes } from '../ContextApi/contextApi_2';
 import Loader from 'react-loader-spinner';
 import {db} from "../config";
 import shortid from 'shortid';
@@ -35,10 +36,6 @@ const rows = [
   createData('Eclair', 262 ,50),
   createData('Frozen yoghurt', 159 ,50),
 ];
-
-
-
-
 
 
 function descendingComparator(a, b, orderBy) {
@@ -168,6 +165,7 @@ const EnhancedTableToolbar = (props) => {
         </Typography>
       )}
 
+{/* ............................................................. */}
       {numSelected > 0 ? (
         <Tooltip title="Delete">
           <IconButton aria-label="delete">
@@ -291,23 +289,165 @@ export default function Results() {
     const [voterslist,setVotersList] = useState([]);
     const [loading,setLoading] = useState(true);
 
- 
-    db.collection('online-voting').onSnapshot((query)=> {
-      setVotersList(
-        query.docs.map( info => ({
-          id: info.id,
-          studentId: info.data().studentId,
-          president: info.data().president,
-          vicePresident: info.data().vicePresident,
-          srcPresident: info.data().src,
-          secretary: info.data().secretary,
-          student_Id: info.data().student_Id,
-          student_Name: info.data().student_Name,
-        }))
-      );
-      setLoading(false);
+    const {Pres,Vice,Src,Sec} = useContext(AppContextVotes);
+    // console.log(Pres)
+    const [newPresVote, setNewPresVote] = Pres;
+    const [newViceVote, setNewViceVotes] = Vice;
+    const [newSrcVote, setNewSrcVote] = Src; 
+    const [newSecVote, setNewSecVote] = Sec;
+
+
+
+
+    useEffect(()=> {
+      db.collection('online-voting').onSnapshot((query)=> {
+        setVotersList(
+          query.docs.map( info => ({
+            id: info.id,
+            studentId: info.data().studentId,
+            president: info.data().president,
+            vicePresident: info.data().vicePresident,
+            srcPresident: info.data().src,
+            secretary: info.data().secretary,
+            student_Id: info.data().student_Id,
+            student_Name: info.data().student_Name,
+          }))
+        );
+        setLoading(false);
+
+        // FOR PRESIDENTS
+
+        const PRESIDENT = voterslist.map((item)=> item.president);
+           const Manasseh = PRESIDENT.filter((man)=> man === "Manasseh Ankrah");
+           const Mohammed = PRESIDENT.filter((moh)=> moh === "Mohammed Sogbe");
+           const Ruby = PRESIDENT.filter((rub)=> rub === "Ruby Bentil");
+           const Dinah = PRESIDENT.filter((din)=> din === "Dinah Ofooley");
+           const David = PRESIDENT.filter((dav)=> dav === "David Ankrah");
+           const Judah = PRESIDENT.filter((jud)=> jud === "Judah Ankrah");
+
+           if(Manasseh === undefined) return 0;
+           if(Mohammed === undefined) return 0;
+           if(Ruby === undefined) return 0;
+           if(Dinah === undefined) return 0;
+           if(David === undefined) return 0;
+           if(Judah === undefined) return 0;
+
+        setNewPresVote({
+          Manasseh: Manasseh.length,
+          Mohammed: Mohammed.length,
+          Ruby: Ruby.length,
+          Dinah: Dinah.length,
+          David: David.length,
+          Judah: Judah.length,
+        })
+
+
+        // FOR VICE_PRESIDENTS
+    const VICE_PRESIDENT = voterslist.map((item)=> item.vicePresident)
+
+    const Jonathan = VICE_PRESIDENT.filter((presi)=> presi === "Jonathan Bently");
+    const Rosemond = VICE_PRESIDENT.filter((presi)=> presi === "Rosemond Adai");
+    const Joseph = VICE_PRESIDENT.filter((presi)=> presi === "Joseph Andoh");
+    const George = VICE_PRESIDENT.filter((presi)=> presi === "George Amoni");
+    const Amanda = VICE_PRESIDENT.filter((presi)=> presi === "Amanda Acquah");
+    const Jude = VICE_PRESIDENT.filter((presi)=> presi === "Jude Benson");
+
+        if(Jonathan === undefined) return 0;
+        if(Rosemond === undefined) return 0;
+        if(Joseph === undefined) return 0;
+        if(George === undefined) return 0;
+        if(Amanda === undefined) return 0;
+        if(Jude === undefined) return 0;
+
+    setNewViceVotes({
+      Jonathan: Jonathan.length,
+      Rosemond: Rosemond.length,
+      Joseph: Joseph.length,
+      George: George.length,
+      Amanda: Amanda.length,
+      Jude: Jude.length
     })
-       
+
+
+
+  // FOR SRC_PRESIDENTS
+const SRC_PRESIDENT = voterslist.map((item)=> item.srcPresident)
+
+const Patience = SRC_PRESIDENT.filter((presi)=> presi === "Patience Ankrah");
+const Daniel = SRC_PRESIDENT.filter((presi)=> presi === "Daniel Darko");
+const Charlotte = SRC_PRESIDENT.filter((presi)=> presi === "Charlotte Adams");
+const Jeremy = SRC_PRESIDENT.filter((presi)=> presi === "Jeremy Westland");
+const Lois = SRC_PRESIDENT.filter((presi)=> presi === "Lois Essel");
+const Kendrick = SRC_PRESIDENT.filter((presi)=> presi === "Kendrick Lamar");
+
+if(Patience === undefined) return 0;
+if(Daniel === undefined) return 0;
+if(Charlotte === undefined) return 0;
+if(Jeremy === undefined) return 0;
+if(Lois === undefined) return 0;
+if(Kendrick === undefined) return 0;
+
+setNewSrcVote({
+  Patience: Patience.length,
+  Daniel: Daniel.length,
+  Charlotte: Charlotte.length,
+  Jeremy: Jeremy.length,
+  Lois: Lois.length,
+  Kendrick: Kendrick.length
+})
+
+
+// FOR SECRETARY
+const SECRETARY = voterslist.map((item)=> item.secretary)
+
+const Mercy = SECRETARY.filter((presi)=> presi === "Mercy Appiah");
+const Rose = SECRETARY.filter((presi)=> presi === "Rose Prah");
+const Jacob = SECRETARY.filter((presi)=> presi === "Jacob Davidson");
+const Johnson = SECRETARY.filter((presi)=> presi === "Johnson Elaine");
+const Nathaniel = SECRETARY.filter((presi)=> presi === "Nathaniel Essel");
+const Kennedy = SECRETARY.filter((presi)=> presi === "Kennedy Asiedu");
+
+if(Mercy === undefined) return 0;
+if(Rose === undefined) return 0;
+if(Jacob === undefined) return 0;
+if(Johnson === undefined) return 0;
+if(Nathaniel === undefined) return 0;
+if(Kennedy === undefined) return 0;
+
+setNewSecVote({
+  Mercy: Mercy.length,
+  Rose: Rose.length,
+  Jacob: Jacob.length,
+  Johnson: Johnson.length,
+  Nathaniel: Nathaniel.length,
+  Kennedy: Kennedy.length
+})
+
+      })
+    },[])
+
+
+        // console.log(voterslist)
+        // console.log(newViceVote.Jonathan)
+        // console.log(newViceVote.Rosemond)
+        // console.log(newViceVote.Joseph)
+        // console.log(newViceVote.George)
+        // console.log(newViceVote.Amanda)
+        // console.log(newViceVote.Jude)
+
+
+
+console.log(newPresVote.Manasseh);
+console.log(newPresVote.Mohammed);
+console.log(newPresVote.Ruby);
+console.log(newPresVote.Dinah);
+console.log(newPresVote.David);
+console.log(newPresVote.Judah);
+
+
+   
+
+
 
         
    const Spinner = () => {

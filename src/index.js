@@ -3,13 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Context from './ContextApi/Context';
+import ContextVotes  from './ContextApi/contextApi_2';
+
 
 ReactDOM.render(
-  <React.StrictMode>
     <Context>
+      <ContextVotes>
+
       <App />
+
+      </ContextVotes>
     </Context>
-  </React.StrictMode>,
+  ,
   document.getElementById('root')
 );
 
