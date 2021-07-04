@@ -33,10 +33,6 @@ function President() {
 
   // console.log(process.env.REACT_APP_API_KEY )
 
-  
-  const toggleVerified = () => {
-          setVerified(true);
-  };
 
   const handleSubmit = () => {
     if (president && vicePresident && src && secretary) {
@@ -61,6 +57,17 @@ function President() {
     }
 
   };
+
+  const toggleVerified = () => {
+    if (president && vicePresident && src && secretary) {
+      setVerified(true);
+      console.log("VERIFIED IS TRUE")
+    } else {
+      setVerified(false);
+      console.log("VERIFIED IS FALSE")
+
+    }
+};
 
 
   return (
