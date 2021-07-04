@@ -48,22 +48,6 @@ function descendingComparator(a, b, orderBy) {
   return 0;
 }
 
-function getComparator(order, orderBy) {
-  return order === 'desc'
-    ? (a, b) => descendingComparator(a, b, orderBy)
-    : (a, b) => -descendingComparator(a, b, orderBy);
-}
-
-function stableSort(array, comparator) {
-  const stabilizedThis = array.map((el, index) => [el, index]);
-  stabilizedThis.sort((a, b) => {
-    const order = comparator(a[0], b[0]);
-    if (order !== 0) return order;
-    return a[1] - b[1];
-  });
-  return stabilizedThis.map((el) => el[0]);
-}
-
 const headCells = [
   { id: 'student_id', numeric: false, disablePadding: true, label: 'Student Id' },
   { id: 'president', numeric: true, disablePadding: false, label: 'President' },
@@ -425,31 +409,7 @@ setNewSecVote({
 
       })
     },[])
-
-
-        // console.log(voterslist)
-        // console.log(newViceVote.Jonathan)
-        // console.log(newViceVote.Rosemond)
-        // console.log(newViceVote.Joseph)
-        // console.log(newViceVote.George)
-        // console.log(newViceVote.Amanda)
-        // console.log(newViceVote.Jude)
-
-
-
-console.log(newPresVote.Manasseh);
-console.log(newPresVote.Mohammed);
-console.log(newPresVote.Ruby);
-console.log(newPresVote.Dinah);
-console.log(newPresVote.David);
-console.log(newPresVote.Judah);
-
-
-   
-
-
-
-        
+     
    const Spinner = () => {
      return(
     <div style={{display: "flex", justifyContent: "center",alignItems:"center",marginTop: 300}} >

@@ -91,23 +91,23 @@ function Vote_Count() {
                 </div>
                 <div className="candidate">
                     <h3 className="name">Daniel Darko</h3>
-                    <p className="vote_num" className="vote_num">{Src[0].Daniel + " votes "}</p>
+                    <p className="vote_num" >{Src[0].Daniel + " votes "}</p>
                 </div>
                 <div className="candidate">
                     <h3 className="name">Charlotte Adams</h3>
-                    <p className="vote_num" className="vote_num">{Src[0].Charlotte + " votes "}</p>
+                    <p className="vote_num" >{Src[0].Charlotte + " votes "}</p>
                 </div>
                 <div className="candidate">
                     <h3 className="name">Jeremy Westland</h3>
-                    <p className="vote_num" className="vote_num">{Src[0].Jeremy + " votes "}</p>
+                    <p className="vote_num">{Src[0].Jeremy + " votes "}</p>
                 </div>
                 <div className="candidate">
                     <h3 className="name">Lois Essel</h3>
-                    <p className="vote_num" className="vote_num">{Src[0].Lois + " votes "}</p>
+                    <p className="vote_num" >{Src[0].Lois + " votes "}</p>
                 </div>
                 <div className="candidate">
                     <h3 className="name">Kendrick Lamar</h3>
-                    <p className="vote_num" className="vote_num">{Src[0].Kendrick + " votes "}</p>
+                    <p className="vote_num">{Src[0].Kendrick + " votes "}</p>
                 </div>
                 </div>
             </Paper>

@@ -21,17 +21,10 @@ function President() {
   const [src, setSRC] = useState("");
   const [verified, setVerified] = useState(false);
   const [isVoted, setIsVoted] = useState(true);
-  const {IndexNumber,BioData,StudentObject,IdVal} = useContext(AppContext);
+  const {IndexNumber,BioData,IdVal} = useContext(AppContext);
   const [contextIndex,setContextIndex] = IndexNumber;
   const [contextBio,setContextBio] = BioData;
-  const [contextStudentObj,setContextStudentObj] = StudentObject; 
   const [contextId,setContextId] = IdVal; 
-
-
-
-
-
-  // console.log(process.env.REACT_APP_API_KEY )
 
 
   const handleSubmit = () => {
@@ -65,7 +58,6 @@ function President() {
     } else {
       setVerified(false);
       console.log("VERIFIED IS FALSE")
-
     }
 };
 

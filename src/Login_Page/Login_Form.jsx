@@ -2,28 +2,13 @@ import React, {useState,useEffect, useContext} from 'react';
 import "./Login_Form.css";
 import Button from '@material-ui/core/Button';
 import {db} from "../config";
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import {Link} from 'react-router-dom';
 import { AppContext } from '../ContextApi/Context';
 
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     '& .MuiTextField-root': {
-//       margin: theme.spacing(1.2),
-//       width: 350,
-//       display: flex,
-//       justifyContent: center,
-//       alignItems: center
-//     },
-//   },
-// }));
-
-
 
 export default function TextFieldSizes() {
-  // const classes = useStyles();
   const [studentId,setStudentId] = useState("");
   const {IndexNumber,BioData,StudentObject,IdVal,Alert} = useContext(AppContext);
   const [contextIndex,setContextIndex] = IndexNumber;
@@ -38,11 +23,8 @@ useEffect(()=> {
 },[]);
 
 
-// console.log(contextStudent[0].Voted)
 
   const loadResponse = () => {
-
-      try {
         db.collection('index-numbers').onSnapshot((query)=> {
           setContextStudent(
             query.docs.map( info => ({
@@ -53,9 +35,6 @@ useEffect(()=> {
             }))
           );
         })
-      } catch (error) {
-      console.log("error occured")
-    }
   }
 
 
